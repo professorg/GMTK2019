@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 4 - Stair Maze Level.unity
     guid: 5caad05730ee2bd4b835c0cf7eb93eb8
+  - enabled: 1
+    path: Assets/Scenes/Level 6 - Tracks are not broke.unity
+    guid: 032324ea7894ff34c9593facf48c3403
+  - enabled: 1
+    path: Assets/Scenes/Level 5 - Tracks are a thing I guess.unity
+    guid: d253e793c4e379f499799c7a31999ac0
+  - enabled: 1
+    path: Assets/Scenes/Level 7 - Tracks are OP.unity
+    guid: e6154c781fd939c41b1137cacde9e603
   m_configObjects: {}
