@@ -98,6 +98,7 @@ MonoBehaviour:
   jumpHeight: 4.5
   jumpTime: 0.4
   playerSpeed: 10
+  sprintMultiplier: 2
   deathHeight: -20
   groundLayer:
     serializedVersion: 2
