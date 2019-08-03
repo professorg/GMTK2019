@@ -5,9 +5,7 @@ using UnityEngine;
 public class StickBox : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log("Squish?");
         if (collider.gameObject.tag == "Player") {
-            Debug.Log("Squish!");
             collider.gameObject.GetComponent<Transform>().parent = transform;
         }
     }
