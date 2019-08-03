@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     // Public variables (in editor)
-    public float jumpHeight, jumpTime, playerSpeed, deathHeight;
+    public float jumpHeight, jumpTime, playerSpeed, sprintMultiplier, deathHeight;
     public LayerMask groundLayer;
 
     // Local variables
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         /* === Horizontal === */
-        velocity.x = Input.GetAxis("Horizontal") * playerSpeed;
+        velocity.x = Input.GetAxis("Horizontal") * playerSpeed * (Input.GetButton("Fire2") ? sprintMultiplier : 1f);
 
         if(left)
         {
@@ -93,7 +93,16 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = 0;
 
-            float y = (downLeft ? downLeft.point.y : downRight.point.y);
+            float y = Mathf.Max((downLeft ? downLeft.point.y : downRight.point.y), (downRight ? downRight.point.y : 0));
+            if (downLeft) {
+                if (downRight) {
+                    y = Mathf.Max(downLeft.point.y, downRight.point.y);
+                } else {
+                    y = downLeft.point.y;
+                }
+            } else {
+                y = downRight.point.y;
+            }
 
             transform.position = new Vector3(transform.position.x, y + size.y / 2f);
         }
