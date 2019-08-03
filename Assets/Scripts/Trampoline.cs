@@ -20,7 +20,7 @@ public class Trampoline : MonoBehaviour
 
     void boing(PlayerMovement pm)
     {
-        pm.jump(jumpHeight);
+        pm.Jump(jumpHeight);
     }
 
 }
