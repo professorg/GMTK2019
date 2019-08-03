@@ -261,6 +261,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8980933433182298753, guid: c165c011a38830103ba9b716b9dd5002,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level 2 - Stairs exist
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c165c011a38830103ba9b716b9dd5002, type: 3}
 --- !u!1 &1289579879
