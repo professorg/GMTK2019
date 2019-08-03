@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     // Public variables (in editor)
-    public float jumpHeight, jumpTime, playerSpeed, deathHeight;
+    public float jumpHeight, jumpTime, playerSpeed, sprintMultiplier, deathHeight;
     public LayerMask groundLayer;
 
     // Local variables
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         /* === Horizontal === */
-        velocity.x = Input.GetAxis("Horizontal") * playerSpeed;
+        velocity.x = Input.GetAxis("Horizontal") * playerSpeed * (Input.GetButton("Fire2") ? sprintMultiplier : 1f);
 
         if(left)
         {
