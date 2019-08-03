@@ -6,13 +6,11 @@ public class Trampoline : MonoBehaviour
 {
 
     public float jumpHeight;
-    float jumpVelocity;
 
     void Start()
     {
-
-        jumpVelocity = Mathf.Abs(gravity) * jumpTime;
     }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player") {
