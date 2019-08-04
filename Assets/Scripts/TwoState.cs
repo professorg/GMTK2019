@@ -29,7 +29,8 @@ public class TwoState : MonoBehaviour
         }
     }
 
-    public void Notify(bool left) {
+    public void Notify(bool left)
+    {
         if (left == facingLeft) {
             timeLeft = resetTime;
             GetComponent<SpriteRenderer>().sprite = spriteMiddle;
