@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Public variables (in editor)
     public float jumpHeight, jumpTime, playerSpeed, sprintMultiplier, deathHeight;
     public LayerMask groundLayer;
+    public GameObject legs;
 
     // Local variables
     bool grounded, jumped;
@@ -136,10 +137,11 @@ public class PlayerMovement : MonoBehaviour
         if (/*!jumped && */grounded && Input.GetButtonDown("Fire1")) {
             velocity.y = jumpVelocity;
             grounded = false;
-            BoxCollider2D collider = GetComponent<BoxCollider2D>();
             if (!jumped) {
+                BoxCollider2D collider = GetComponent<BoxCollider2D>();
                 collider.size = new Vector2(collider.size.x, collider.size.y / 2f);
                 collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y / 2f);
+                Instantiate(legs, transform.position, Quaternion.identity);
             }
             SetAnimation(STATE_JUMP);
             // TODO: Spawn legs
