@@ -104,6 +104,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  legs: {fileID: 5272145585025322851, guid: 84834eaa10716df5db76c6dbe0347dcf, type: 3}
 --- !u!61 &2002260895420829932
 BoxCollider2D:
   m_ObjectHideFlags: 0
