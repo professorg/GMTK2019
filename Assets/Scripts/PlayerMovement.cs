@@ -47,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D downLeft = Physics2D.Raycast(position - offset, Vector2.down, size.y / 2 + delta, groundLayer);
         RaycastHit2D downRight = Physics2D.Raycast(position + offset, Vector2.down, size.y / 2 + delta, groundLayer);
 
-        RaycastHit2D left = Physics2D.Raycast(position, Vector2.left, size.x / 2 + delta, groundLayer);
-        RaycastHit2D right = Physics2D.Raycast(position, Vector2.right, size.x / 2 + delta, groundLayer);
+        RaycastHit2D left = Physics2D.Raycast(position + delta*Vector2.down, Vector2.left, size.x / 2 + delta, groundLayer);
+        RaycastHit2D right = Physics2D.Raycast(position + delta*Vector2.down, Vector2.right, size.x / 2 + delta, groundLayer);
         
 
         grounded = downLeft || downRight;
@@ -68,11 +68,11 @@ public class PlayerMovement : MonoBehaviour
         if(left)
         {
             velocity.x = -Mathf.Clamp01(-velocity.x);
-            transform.position = new Vector3(left.point.x + size.x / 2f + delta, transform.position.y);
+            transform.position = new Vector3(left.point.x + size.x / 2f + 1.1f * delta, transform.position.y);
         } else if (right)
         {
             velocity.x = Mathf.Clamp01(velocity.x);
-            transform.position = new Vector3(right.point.x - (size.x / 2f + delta), transform.position.y);
+            transform.position = new Vector3(right.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
         }
 
 
@@ -93,16 +93,16 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = 0;
 
-            float y = Mathf.Max((downLeft ? downLeft.point.y : downRight.point.y), (downRight ? downRight.point.y : 0));
-            if (downLeft) {
-                if (downRight) {
-                    y = Mathf.Max(downLeft.point.y, downRight.point.y);
-                } else {
-                    y = downLeft.point.y;
-                }
-            } else {
-                y = downRight.point.y;
-            }
+            float y = Mathf.Max((downLeft ? downLeft.point.y : downRight.point.y), (downRight ? downRight.point.y : Mathf.NegativeInfinity));
+            //if (downLeft) {
+            //    if (downRight) {
+            //        y = Mathf.Max(downLeft.point.y, downRight.point.y);
+            //    } else {
+            //        y = downLeft.point.y;
+            //    }
+            //} else {
+            //    y = downRight.point.y;
+            //}
 
             transform.position = new Vector3(transform.position.x, y + size.y / 2f);
         }
