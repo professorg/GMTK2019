@@ -9,9 +9,9 @@ public class MusicManager : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("The music manager awakes");
+        //Debug.Log("The music manager awakes");
         MusicPlayerSingleton ms = GameObject.FindWithTag("Music").GetComponent<MusicPlayerSingleton>();
-        Debug.Log("Found: " + ms);
+        //Debug.Log("Found: " + ms);
         AudioSource audio = ms.GetComponent<AudioSource>();
         if (audio.clip != newMusic) {
             audio.clip = newMusic;
