@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ public class TwoState : MonoBehaviour
             facingLeft = !facingLeft;
             timeLeft = resetTime;
             GetComponent<SpriteRenderer>().sprite = (facingLeft ? spriteLeft : spriteRight);
+            Array.ForEach(FindObjectsOfType<TwoStateBlock>(), o => o.Toggle());
         }
     }
 }
