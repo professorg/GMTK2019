@@ -15,6 +15,15 @@ public class PlayerMovement : MonoBehaviour
     Vector2 startingPosition, size;
     Vector3 velocity;
 
+    Animator animator;
+    int _currentState = STATE_IDLE;
+
+    const int STATE_IDLE = 0;
+    const int STATE_RUN = 1;
+    const int STATE_JUMP = 2;
+    const int STATE_FALL = 3;
+    const int STATE_LAND = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         startingPosition = transform.position;
         velocity = Vector2.zero;
         size = GetComponent<BoxCollider2D>().size;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +74,14 @@ public class PlayerMovement : MonoBehaviour
 
         /* === Horizontal === */
         velocity.x = Input.GetAxis("Horizontal") * playerSpeed * (Input.GetButton("Fire2") ? sprintMultiplier : 1f);
+        if (grounded) {
+            if (Mathf.Abs(velocity.x) > delta) {
+                SetAnimation(STATE_RUN);
+                ChangeDirection(velocity.x > 0);
+            } else {
+                SetAnimation(STATE_IDLE);
+            }
+        }
 
         if(left) {
             velocity.x = -Mathf.Clamp01(-velocity.x);
@@ -113,19 +131,39 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump
-        if (!jumped && grounded && Input.GetButtonDown("Fire1")) {
+        if (/*!jumped && */grounded && Input.GetButtonDown("Fire1")) {
             velocity.y = jumpVelocity;
             grounded = false;
-            //jumped = true;
+            SetAnimation(STATE_JUMP);
+            // TODO: Spawn legs
+            jumped = true;
         }
 
-        
+        if (jumped && velocity.y < -delta) {
+            SetAnimation(STATE_FALL);
+        }
 
+    }
+
+    void SetAnimation(int state)
+    {
+        if (state == _currentState)
+            return;
+        Debug.Log("Changing to " + state);
+        animator.SetInteger("state", state); 
+        _currentState = state;
+    }
+
+    void ChangeDirection(bool right)
+    {
+        GetComponent<SpriteRenderer>().flipX = right;
     }
 
     public void Jump(float height) {
         float yvel = Mathf.Sqrt(2f * Mathf.Abs(gravity) * height);
         velocity.y = yvel;
+        if (jumped)
+            SetAnimation(STATE_JUMP);
     }
 
     void Die()
