@@ -23,11 +23,11 @@ public class Teleporter : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (cooldown <= 0 && collider.gameObject.tag == "Player") {
-            //Vector3 offset = transform.position - collider.transform.position;
-            //other.Cooldown();
-            //collider.transform.position = other.transform.position - offset;
+            Vector3 offset = transform.position - collider.transform.position;
             other.Cooldown();
-            collider.transform.position = other.transform.position;
+            collider.transform.position = other.transform.position - offset;
+            //other.Cooldown();
+            //collider.transform.position = other.transform.position;
         }
     }
     
