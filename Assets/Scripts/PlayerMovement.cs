@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Public variables (in editor)
     public float jumpHeight, jumpTime, playerSpeed, sprintMultiplier, deathHeight;
     public LayerMask groundLayer;
+    public GameObject legs;
 
     // Local variables
     bool grounded, jumped;
@@ -58,8 +59,6 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D left = Physics2D.Raycast(position + delta*Vector2.down, Vector2.left, size.x / 2 + delta, groundLayer);
         RaycastHit2D right = Physics2D.Raycast(position + delta*Vector2.down, Vector2.right, size.x / 2 + delta, groundLayer);
 
-        RaycastHit2D hiLeft = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.left, size.x / 2 + delta, groundLayer);
-        RaycastHit2D hiRight = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.right, size.x / 2 + delta, groundLayer);
 
         
 
@@ -91,12 +90,16 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector3(right.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
         }
 
-        if(hiLeft) {
-            velocity.x = -Mathf.Clamp01(-velocity.x);
-            transform.position = new Vector3(hiLeft.point.x + size.x / 2f + 1.1f * delta, transform.position.y);
-        } else if (hiRight) {
-            velocity.x = Mathf.Clamp01(velocity.x);
-            transform.position = new Vector3(hiRight.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
+        if (!jumped) {
+            RaycastHit2D hiLeft = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.left, size.x / 2 + delta, groundLayer);
+            RaycastHit2D hiRight = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.right, size.x / 2 + delta, groundLayer);
+            if(hiLeft) {
+                velocity.x = -Mathf.Clamp01(-velocity.x);
+                transform.position = new Vector3(hiLeft.point.x + size.x / 2f + 1.1f * delta, transform.position.y);
+            } else if (hiRight) {
+                velocity.x = Mathf.Clamp01(velocity.x);
+                transform.position = new Vector3(hiRight.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
+            }
         }
 
         /* === Vertical === */
@@ -134,6 +137,12 @@ public class PlayerMovement : MonoBehaviour
         if (/*!jumped && */grounded && Input.GetButtonDown("Fire1")) {
             velocity.y = jumpVelocity;
             grounded = false;
+            if (!jumped) {
+                BoxCollider2D collider = GetComponent<BoxCollider2D>();
+                collider.size = new Vector2(collider.size.x, collider.size.y / 2f);
+                collider.offset = new Vector2(collider.offset.x, collider.offset.y - collider.size.y / 2f);
+                Instantiate(legs, transform.position, Quaternion.identity);
+            }
             SetAnimation(STATE_JUMP);
             // TODO: Spawn legs
             jumped = true;
