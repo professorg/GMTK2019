@@ -7,21 +7,12 @@ public class ExitPortal : MonoBehaviour
 {
 
     public string nextLevel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        
-    }
-
-    void OnTriggerEnter2D()
-    {
-        SceneManager.LoadScene(nextLevel);
+        if (collider.gameObject.tag == "Player") {
+            SceneManager.LoadScene(nextLevel);
+        }
     }
 
 }
