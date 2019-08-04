@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -11,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     // Local variables
-    bool collisionLeft, collisionRight;
     bool grounded, jumped;
     float gravity, jumpVelocity;
     Vector2 startingPosition, size;
@@ -40,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 position = transform.position;
         float delta = 0.1f;
 
-        Vector2 offset = Vector2.left * delta*4f;
+        Vector2 offset = Vector2.left * delta*3f;
 
         RaycastHit2D up = Physics2D.Raycast(position, Vector2.up, size.y / 2 + delta, groundLayer);
 
@@ -49,11 +47,13 @@ public class PlayerMovement : MonoBehaviour
 
         RaycastHit2D left = Physics2D.Raycast(position + delta*Vector2.down, Vector2.left, size.x / 2 + delta, groundLayer);
         RaycastHit2D right = Physics2D.Raycast(position + delta*Vector2.down, Vector2.right, size.x / 2 + delta, groundLayer);
+
+        RaycastHit2D hiLeft = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.left, size.x / 2 + delta, groundLayer);
+        RaycastHit2D hiRight = Physics2D.Raycast(position + size.y / 4 * Vector2.up, Vector2.right, size.x / 2 + delta, groundLayer);
+
         
 
         grounded = downLeft || downRight;
-        collisionLeft = left;
-        collisionRight = right;
         
         /* === DEATH === */
         if (transform.position.y < deathHeight) {
@@ -65,16 +65,21 @@ public class PlayerMovement : MonoBehaviour
         /* === Horizontal === */
         velocity.x = Input.GetAxis("Horizontal") * playerSpeed * (Input.GetButton("Fire2") ? sprintMultiplier : 1f);
 
-        if(left)
-        {
+        if(left) {
             velocity.x = -Mathf.Clamp01(-velocity.x);
             transform.position = new Vector3(left.point.x + size.x / 2f + 1.1f * delta, transform.position.y);
-        } else if (right)
-        {
+        } else if (right) {
             velocity.x = Mathf.Clamp01(velocity.x);
             transform.position = new Vector3(right.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
         }
 
+        if(hiLeft) {
+            velocity.x = -Mathf.Clamp01(-velocity.x);
+            transform.position = new Vector3(hiLeft.point.x + size.x / 2f + 1.1f * delta, transform.position.y);
+        } else if (hiRight) {
+            velocity.x = Mathf.Clamp01(velocity.x);
+            transform.position = new Vector3(hiRight.point.x - (size.x / 2f + 1.1f * delta), transform.position.y);
+        }
 
         /* === Vertical === */
         
