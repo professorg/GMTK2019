@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 575492041}
   - component: {fileID: 575492040}
   - component: {fileID: 575492039}
+  - component: {fileID: 575492042}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -494,6 +495,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575492042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575492038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50149351711b5408cfec9d1a688979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetOrthoSize: 5
+  speed: 5
 --- !u!1001 &646656148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980933433182298753, guid: c165c011a38830103ba9b716b9dd5002,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level 12.1 Portals Introduced
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c165c011a38830103ba9b716b9dd5002, type: 3}
