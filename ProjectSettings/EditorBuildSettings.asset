@@ -32,4 +32,70 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 7 - TWOSTATE.unity
     guid: ee019703d7b5cd546a2f98048eba6f69
+  - enabled: 1
+    path: Assets/Scenes/Level 8 - Twostate 2.unity
+    guid: 8a5084fae4d1c7e449736f395cba0f51
+  - enabled: 1
+    path: Assets/Scenes/Level 8.unity
+    guid: 54e663b85a3a064469573f1f95e51f82
+  - enabled: 1
+    path: Assets/Scenes/Level 9 - TwoState MaZe.unity
+    guid: 129b6052f8bd7ad4a9ad28aff15d52c1
+  - enabled: 1
+    path: Assets/Scenes/Level 10 - Spring Two State Trick.unity
+    guid: a26712f2cdef9f84fbb2ef35bd8eba04
+  - enabled: 1
+    path: Assets/Scenes/Level 11 - Boing Boing MaZe.unity
+    guid: 6f03813b78963154280b57cbb06898f3
+  - enabled: 1
+    path: Assets/Scenes/Level 12 Keys Introduced.unity
+    guid: 056c2eeb8796b944d9ad7a6d04884291
+  - enabled: 1
+    path: Assets/Scenes/Level 12.1 Portals Introduced.unity
+    guid: 4f2040a09965b5942be433f79879dd1f
+  - enabled: 1
+    path: Assets/Scenes/Level 12.2 Portals are cool plz someone help make portal levels.unity
+    guid: 3bf7a55ca8a49dc43a00912a9b9de52d
+  - enabled: 1
+    path: Assets/Scenes/Level 13 Keys in the house.unity
+    guid: 0377080364de06545af64a9a23732546
+  - enabled: 1
+    path: Assets/Scenes/Level 14 - Key Trampoline Death MaZe.unity
+    guid: 1129cd7bfcfdf5a418a8332a821dbe94
+  - enabled: 1
+    path: Assets/Scenes/Level 15 - Switches have directions op.unity
+    guid: 4b5fe1395de2e5e4a850ccaa970f3745
+  - enabled: 1
+    path: Assets/Scenes/Level 16 - Magic Carpet Ride.unity
+    guid: efcef484a472ebb4395cffb19e1fbecb
+  - enabled: 1
+    path: Assets/Scenes/Level 17 - Wedding Cake Bonzana.unity
+    guid: eff814b065021824686c3117c4196f39
+  - enabled: 1
+    path: Assets/Scenes/Level 18 - Decent into TwoStates Part 1.unity
+    guid: 9746135339c02fc44aa17ed556b20f12
+  - enabled: 1
+    path: Assets/Scenes/Level 19 - Decent into TwoStates Part 2.unity
+    guid: ec7ede0de090b3c46bf69f25262c86d3
+  - enabled: 1
+    path: Assets/Scenes/Level 20 - Long Diagonal Twosted Fun.unity
+    guid: 87f00f74d5bb7de4687c134ec6a2c510
+  - enabled: 1
+    path: Assets/Scenes/Level 21 - Quick Track.unity
+    guid: e90aedb0dff97af4097ee8497d6df804
+  - enabled: 1
+    path: Assets/Scenes/Level 22 - Blocks of Oof.unity
+    guid: 9d7a43ffff346094da3538e7ed0599f4
+  - enabled: 1
+    path: Assets/Scenes/Level not 7.unity
+    guid: d96204c5c4ffd3749a0018ccd8933706
+  - enabled: 1
+    path: Assets/Scenes/Level X - First Trampoline Level.unity
+    guid: 0357d957f975c8744b4518b4b9cd07c7
+  - enabled: 1
+    path: Assets/Scenes/Level X - Moving Plat Challenge.unity
+    guid: b8b062b6499b5254c8d14b80548130d1
+  - enabled: 1
+    path: Assets/Scenes/Level X - Trampoline Platforming Challenge.unity
+    guid: 64a36fb913919e9468e9b9c9e22bcead
   m_configObjects: {}
