@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.K)) {
+            Die();
+        }
+
         /* === Final Movement === */
         transform.position += velocity * Time.deltaTime;
 
