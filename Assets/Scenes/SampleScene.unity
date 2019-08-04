@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -353,6 +354,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50149351711b5408cfec9d1a688979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2002260896497154613}
+  targetOrthoSize: 10
+  speed: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -9668,7 +9684,7 @@ PrefabInstance:
     - target: {fileID: 8980933433182298753, guid: c165c011a38830103ba9b716b9dd5002,
         type: 3}
       propertyPath: nextLevel
-      value: SampleScene
+      value: Level 1 -eZ clap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c165c011a38830103ba9b716b9dd5002, type: 3}
@@ -9930,6 +9946,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91cce26909b4547cc8ff2059f2f9e8de, type: 3}
+--- !u!4 &2002260896497154613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2002260895420829922, guid: 91cce26909b4547cc8ff2059f2f9e8de,
+    type: 3}
+  m_PrefabInstance: {fileID: 2002260896497154612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2786766583022306300
 PrefabInstance:
   m_ObjectHideFlags: 0

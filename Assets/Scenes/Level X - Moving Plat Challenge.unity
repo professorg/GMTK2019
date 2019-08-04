@@ -9504,6 +9504,7 @@ GameObject:
   - component: {fileID: 553760491}
   - component: {fileID: 553760490}
   - component: {fileID: 553760489}
+  - component: {fileID: 553760492}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9576,6 +9577,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553760492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553760488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c50149351711b5408cfec9d1a688979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1172163789}
+  targetOrthoSize: 10
+  speed: 10
 --- !u!1001 &705522728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9848,6 +9864,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91cce26909b4547cc8ff2059f2f9e8de, type: 3}
+--- !u!4 &1172163789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2002260895420829922, guid: 91cce26909b4547cc8ff2059f2f9e8de,
+    type: 3}
+  m_PrefabInstance: {fileID: 1172163788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1295755597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10013,6 +10035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980933433182298753, guid: c165c011a38830103ba9b716b9dd5002,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level 14 - Key Trampoline Death MaZe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c165c011a38830103ba9b716b9dd5002, type: 3}
