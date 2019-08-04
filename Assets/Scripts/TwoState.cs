@@ -7,38 +7,35 @@ public class TwoState : MonoBehaviour
 {
 
     public bool facingLeft;
-    public float resetTime;
     public Sprite spriteLeft, spriteMiddle, spriteRight;
 
-    float timeLeft;
+    bool switching;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeLeft = 0;
         GetComponent<SpriteRenderer>().sprite = (facingLeft ? spriteLeft : spriteRight);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (timeLeft > 0) {
-            timeLeft -= Time.deltaTime;
-        } else {
-            GetComponent<SpriteRenderer>().sprite = (facingLeft ? spriteLeft : spriteRight);
-        }
-    }
 
     public void Notify(bool left)
     {
         if (left == facingLeft) {
-            timeLeft = resetTime;
+            switching = true;
             GetComponent<SpriteRenderer>().sprite = spriteMiddle;
-        } else if (timeLeft > 0) {
+        } else if (switching) {
             facingLeft = !facingLeft;
-            timeLeft = resetTime;
+            switching = true;
             GetComponent<SpriteRenderer>().sprite = (facingLeft ? spriteLeft : spriteRight);
             Array.ForEach(FindObjectsOfType<TwoStateBlock>(), o => o.Toggle());
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player") {
+            switching = false;
+            GetComponent<SpriteRenderer>().sprite = (facingLeft ? spriteLeft : spriteRight);
         }
     }
 }
