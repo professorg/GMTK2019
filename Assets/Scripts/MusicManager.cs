@@ -12,9 +12,12 @@ public class MusicManager : MonoBehaviour
         Debug.Log("The music manager awakes");
         MusicPlayerSingleton ms = GameObject.FindWithTag("Music").GetComponent<MusicPlayerSingleton>();
         Debug.Log("Found: " + ms);
-        ms.GetComponent<AudioSource>().clip = newMusic;
-        ms.GetComponent<AudioSource>().loop = loop;
-        ms.GetComponent<AudioSource>().Play(); 
+        AudioSource audio = ms.GetComponent<AudioSource>();
+        if (audio.clip != newMusic) {
+            audio.clip = newMusic;
+            audio.Play(); 
+        }
+        audio.loop = loop;
     }
 
 }
