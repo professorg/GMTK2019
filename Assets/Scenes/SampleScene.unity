@@ -9381,6 +9381,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 764d23f48f48fd40ab21a6607592589d, type: 3}
+--- !u!1001 &550190527491802236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4028558186469176885, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_Name
+      value: Light Gray/Weird Green Teleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300275437451099211, guid: 8b278e7347fc312da878bec87709758f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b278e7347fc312da878bec87709758f, type: 3}
 --- !u!1001 &582781829249453147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10162,3 +10231,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34b4ad411f9d8177aa4810ae5e4a61a4, type: 3}
+--- !u!1001 &8715669885246919299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7679819062999045453, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_Name
+      value: Aqua/Light Purple Teleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336290345297403699, guid: c1ab28ebbf594d1c5ba08a792387c192,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1ab28ebbf594d1c5ba08a792387c192, type: 3}
