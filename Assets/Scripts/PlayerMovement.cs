@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Jump
-        if (/*!jumped && */grounded && Input.GetButtonDown("Fire1")) {
+        if (!jumped && grounded && Input.GetButtonDown("Fire1")) {
             velocity.y = jumpVelocity;
             grounded = false;
             if (!jumped) {
@@ -148,7 +148,6 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(legs, transform.position, Quaternion.identity);
             }
             SetAnimation(STATE_JUMP);
-            // TODO: Spawn legs
             jumped = true;
         }
 
