@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (state == _currentState)
             return;
-        Debug.Log("Changing to " + state);
+        //Debug.Log("Changing to " + state);
         animator.SetInteger("state", state); 
         _currentState = state;
     }
